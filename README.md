@@ -3,7 +3,7 @@
 ## General Information.
 - Link to the page (HubSpot sandbox environment): [Framna Hub Listing](https://25686499.hs-sites-eu1.com/insights-hub)
 - I managed to complete it **within 8 hours**, but I took a little extra time to write the README and upload the theme to GitHub.
-### Vide Presentation
+### Video Presentation
 - [Main video](https://youtu.be/JJWNudQYMBA) ~12 minutes explains the integration with huspot and the process of creating a page.
 - [Forgotten CSS explanation video](https://youtu.be/9RC3-vaj7V0) ~ 3 minutes to cover something I forgot to mention in Main Vide above.
 
