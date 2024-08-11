@@ -1,0 +1,79 @@
+button,
+.button,
+.hs-button {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.15s linear;
+  white-space: normal;
+}
+
+button:disabled,
+.button:disabled,
+.hs-button:disabled {
+  background-color: #D0D0D0;
+  border-color: #D0D0D0;
+  color: #E6E6E6;
+}
+
+/* No button */
+
+.no-button,
+.no-button:hover,
+.no-button:focus,
+.no-button:active {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: initial;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  transition: none;
+}
+
+.btn {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.5rem;
+  border: 1px solid #000;
+  border-radius: 100px;
+  background-color: #fff;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn > svg > path {
+  fill: #000;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn:hover > svg > path {
+  fill: #fff;
+}
+
+.btn.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn.active > svg {
+  transform: rotate(180deg);
+}
+
+.btn.active > svg > path {
+  fill: #fff;
+}

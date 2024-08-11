@@ -1,0 +1,99 @@
+{% require_css %}
+<style>
+  :root {
+    --footer-banner-bg-color: {{ module.style.footer_banner_background_color.rgba }};
+  }
+  
+  .footer-banner__background {
+    background-color: var(--footer-banner-bg-color);
+    {{ module.style.footer_banner_background_image.css }}
+    background-repeat: no-repeat;
+  }
+</style>
+{% end_require_css %}
+
+{# START --- Footer Green Banner (can be disabled; colors and image are customizable) #}
+{% if module.toggle_footer_banner %}
+<div class="footer-banner__background">
+  <div class="footer-banner">
+    {% if module.footer_banner_heading %}
+    <h2 class="footer-banner__heading">{{ module.footer_banner_heading }}</h2>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+{# END --- Footer Green Banner (can be disabled; colors and image are customizable) #}
+
+{# START -- The actual footer #}
+<div class="footer__background">
+  <div class="container">
+    {# START -- Top part with a Logo and a social media links #}
+    <div class="flex-it justify-between align-center footer__logo-and-socials">
+      <a href="https://www.framna.com">
+        <img class="footer-logo" src="{{ module.logo_field.src }}" alt="{{ module.logo_field.alt }}" laoding="{{ module.logo_field.loading }}"/>
+      </a>
+      <div class="footer__social">
+        {% for social in module.social %}
+        {% set href = social.link.url.href %}
+        <a class="footer__social-link"
+           {% if social.link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+           {% else %}
+           href="{{ href|escape_url }}"
+           {% endif %}
+           {% if social.link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if social.link.rel %}
+           rel="{{ module.link.rel|escape_attr }}"
+           {% endif %}
+           >
+          {{ social.link_text }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {# END -- Top part with a Logo and a social media links #}
+    
+    {# START --- Bottom part with text, Privacy Policy link and additional logos #}
+    <div class="flex-it justify-between align-end footer__text-and-logos">
+      {% if module.footer_text %}
+      <p class="footer__footer-text">{{ module.footer_text }}</p>
+      {% endif %}
+      {% if module.privacy_policy_link.link_text %}
+      {% set href = module.privacy_policy_link.link.url.href %}
+      <a class="footer__privacy-policy"
+         {% if module.privacy_policy_link.link.url.type is equalto "CALL_TO_ACTION"  %}
+         href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+         {% else %}
+         href="{{ href|escape_url }}"
+         {% endif %}
+         {% if module.privacy_policy_link.link.open_in_new_tab %}
+         target="_blank"
+         {% endif %}
+         {% if module.privacy_policy_link.link.rel %}
+         rel="{{ module.privacy_policy_link.link.rel|escape_attr }}"
+         {% endif %}
+         >
+        {{ module.privacy_policy_link.link_text }}
+      </a>
+      {% endif %}
+      <div class="footer__additional-logos">
+        {% for item in module.additional_logo %}
+        {% if item.src %}
+        {% set sizeAttrs = 'width="{{ item.width|escape_attr }}" height="{{ item.height|escape_attr }}"' %}
+        {% if item.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ item.width|escape_attr }}" height="{{ item.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif item.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ item.max_width|escape_attr }}" height="{{ item.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading|escape_attr }}"' : '' %}
+        <img class="footer__additional-logo" src="{{ item.src|escape_url }}" alt="{{ item.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {# END --- Bottom part with text, Privacy Policy link and additional logos #}
+  </div>
+</div>
+{# END -- The actual footer #}

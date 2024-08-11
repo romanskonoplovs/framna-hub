@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'FramnaSans';
+    src: url('{{ get_asset_url('/the-theme/css/font/FramnaSans/FramnaSansBETA10-Regular.ttf') }}');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FramnaSans';
+    src: url('{{ get_asset_url('/the-theme/css/font/FramnaSans/FramnaSansBETA10-Italic.ttf') }}');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'FramnaSans';
+    src: url('{{ get_asset_url('/the-theme/css/font/FramnaSans/FramnaSansBETA10-Medium.ttf') }}');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FramnaSans';
+    src: url('{{ get_asset_url('/the-theme/css/font/FramnaSans/FramnaSansBETA10-MediumItalic.ttf') }}');
+    font-weight: 500;
+    font-style: italic;
+}

@@ -1,0 +1,14 @@
+query TheHub {
+  HUBDB {
+    the_hub_collection {
+      items {
+        label
+        title
+        feature_image
+        description
+        tags
+        url
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{# Hubl Variables #}
+{% set navigation = menu(module.menu_field) %}
+
+{# HTML/Hubl Structure #}
+<div class="navigation-background">
+  <div class="flex-it flex-row justify-between align-center navigation container">
+    <img class="navigation-logo" src="{{ module.logo_field.src }}" alt="{{ module.logo_field.alt }}" laoding="{{ module.logo_field.loading }}"/>
+
+    <div class="flex-it flex-row nav-items js-nav-items">
+      {% for nav_item in navigation.children %}
+      <a class="nav-item" href="{{ nav_item.url }}" title="{{ nav_item.label }}">{{ nav_item.label }}</a>
+      {% endfor %}
+    </div>
+    <div class="navigation-burger js-navigation-burger">
+      <div class="top"></div>
+      <div class="middle"></div>
+      <div class="bottom"></div>
+    </div>
+  </div>
+</div>

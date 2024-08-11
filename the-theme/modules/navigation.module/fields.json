@@ -1,0 +1,27 @@
+[ {
+  "id" : "3365300d-c9cb-2733-83d3-2f56abe97214",
+  "name" : "logo_field",
+  "display_width" : null,
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "show_loading" : true,
+  "type" : "logo",
+  "default" : {
+    "override_inherited_src" : true,
+    "suppress_company_name" : true,
+    "src" : "https://25686499.fs1.hubspotusercontent-eu1.net/hubfs/25686499/framna-logo-3.png",
+    "alt" : "framna-logo-3",
+    "width" : 252,
+    "height" : 63
+  }
+}, {
+  "id" : "ee66da50-969f-1582-024e-85a4577723d4",
+  "name" : "menu_field",
+  "display_width" : null,
+  "label" : "Menu",
+  "required" : false,
+  "locked" : false,
+  "type" : "menu",
+  "default" : 50471002871
+} ]

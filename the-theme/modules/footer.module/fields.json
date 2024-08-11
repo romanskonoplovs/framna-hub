@@ -1,0 +1,268 @@
+[ {
+  "id" : "a38efdb1-e354-f594-d0b0-80252dfdd1f6",
+  "name" : "toggle_footer_banner",
+  "display_width" : null,
+  "label" : "Toggle Footer banner",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "0c0ff81f-9b7e-d2cb-542c-3669a6f24cb4",
+  "name" : "footer_banner_heading",
+  "display_width" : null,
+  "label" : "Footer Banner Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "toggle_footer_banner",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Crafting products  that matter."
+}, {
+  "id" : "122a398a-d67a-2d0c-9a0d-0a233c472ddb",
+  "name" : "logo_field",
+  "display_width" : null,
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "show_loading" : true,
+  "type" : "logo",
+  "default" : {
+    "override_inherited_src" : true,
+    "src" : "https://25686499.fs1.hubspotusercontent-eu1.net/hubfs/25686499/framna-logo-white.png",
+    "alt" : "framna-logo-white",
+    "loading" : "lazy",
+    "suppress_company_name" : true,
+    "width" : 252,
+    "height" : 63
+  }
+}, {
+  "id" : "4f431e9a-4a57-254f-aac0-f975865ba881",
+  "name" : "social",
+  "display_width" : null,
+  "label" : "Social",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "e71a9175-44ee-6919-e16c-34b50c006d17",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "e71a9175-44ee-6919-e16c-34b50c006d17",
+    "name" : "link_text",
+    "display_width" : null,
+    "label" : "Link Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "LinkedIn"
+  }, {
+    "id" : "3e9447ac-4620-3c3c-6b64-64d9a63a4278",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://www.linkedin.com",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "link_text" : "LinkedIn",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://www.linkedin.com",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+}, {
+  "id" : "a928a5cc-9041-54ce-2188-70f3249c58b1",
+  "name" : "footer_text",
+  "display_width" : null,
+  "label" : "Footer Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Framna are a team of digital experience enthusiasts, partnering with the world's leading brands. Born from the union of the top digital product agencies, Bontouch and Shape, we are building the digital products that make the world a better place."
+}, {
+  "id" : "bf4165ab-04d0-1332-ea38-c9cb2e596690",
+  "name" : "privacy_policy_link",
+  "display_width" : null,
+  "label" : "Privacy Policy Link",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a606242c-b34b-ad55-7153-f2a9adedd982",
+    "name" : "link_text",
+    "display_width" : null,
+    "label" : "Link Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Privacy Policy"
+  }, {
+    "id" : "e1acaeb9-1edc-50b6-5a05-32a9fc49378f",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "link_text" : "Privacy Policy",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
+  "id" : "d27c4c03-151c-3c13-ff32-d17502485530",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d2ba6383-23c0-a10e-cbca-c8667173c013",
+    "name" : "footer_banner_background_color",
+    "display_width" : null,
+    "label" : "Footer Banner Background color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "toggle_footer_banner",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "default" : {
+      "color" : "#1BC866",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "dc5489f2-4dbb-fc69-d488-994791d850ee",
+    "name" : "footer_banner_background_image",
+    "display_width" : null,
+    "label" : "Footer Banner Background image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "toggle_footer_banner",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "default" : {
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "auto",
+      "src" : "https://25686499.fs1.hubspotusercontent-eu1.net/hubfs/25686499/logo-framna-background.png"
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "footer_banner_background_color" : {
+      "color" : "#1BC866",
+      "opacity" : 100
+    },
+    "footer_banner_background_image" : {
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "auto",
+      "src" : "https://25686499.fs1.hubspotusercontent-eu1.net/hubfs/25686499/logo-framna-background.png"
+    }
+  }
+}, {
+  "id" : "c790fb00-d707-0a9d-419b-353b839a9a85",
+  "name" : "additional_logo",
+  "display_width" : null,
+  "label" : "Additional Logo",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://25686499.fs1.hubspotusercontent-eu1.net/hubfs/25686499/Shape.png",
+    "alt" : "Shape",
+    "loading" : "lazy",
+    "width" : 127,
+    "height" : 37,
+    "max_width" : 127,
+    "max_height" : 37
+  }
+} ]

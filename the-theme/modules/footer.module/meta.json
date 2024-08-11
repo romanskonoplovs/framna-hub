@@ -1,0 +1,16 @@
+{
+  "global" : false,
+  "content_types" : [ "KNOWLEDGE_BASE", "LANDING_PAGE", "SITE_PAGE", "CUSTOMER_PORTAL", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 111924234456,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/main.css",
+    "name" : "main.css"
+  }, {
+    "autoload" : true,
+    "path" : "../../css/theme-overrides.css",
+    "name" : "theme-overrides.css"
+  } ],
+  "is_available_for_new_content" : true
+}
