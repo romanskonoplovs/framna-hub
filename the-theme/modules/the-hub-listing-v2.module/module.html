@@ -1,0 +1,67 @@
+{# START --- Hubl Variables and operations #}
+{% set queryCollectionData = module.data_query.data.HUBDB.the_hub_v2_collection %}
+{% set topics = [] %}
+{% set formats = [] %}
+{# Getting all unique tags from collection and storing in the 'tags' variable #}
+{% for dataSet in queryCollectionData.items %}
+{% if topics.count(dataSet.topic) == 0 %}
+{% do topics.append(dataSet.topic) %}
+{% endif %}
+{% if formats.count(dataSet.formats) == 0 %}
+{% do formats.append(dataSet.formats) %}
+{% endif %}
+{% endfor %}
+{# END --- Hubl Variables and operations #}
+
+<div class="hub-listing">
+  <div class="container">
+    
+    {# START --- The top area of the module includes an H2 heading and buttons to activate filters. #}
+    <div class="flex-it justify-between hub-listing-header-area">
+      <h1 class="hub-listing-header-area__h1-heading">{{ module.heading }}</h1>
+      <div class="flex-it align-center gap-1">
+        <span class="hub-listing-header-area__label">Filters:</span>
+        <button class="btn hub-listing-header-area__topics-btn">
+          Topics
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.0059 17.7305C11.709 17.7305 11.4434 17.6172 11.209 17.3906L2.13867 8.10938C2.03711 8.00781 1.95898 7.89453 1.9043 7.76953C1.84961 7.63672 1.82227 7.49609 1.82227 7.34766C1.82227 7.14453 1.86914 6.96094 1.96289 6.79688C2.05664 6.63281 2.18164 6.50391 2.33789 6.41016C2.50195 6.31641 2.68555 6.26953 2.88867 6.26953C3.18555 6.26953 3.43945 6.37109 3.65039 6.57422L12.627 15.75H11.373L20.3496 6.57422C20.5684 6.37109 20.8223 6.26953 21.1113 6.26953C21.3145 6.26953 21.4941 6.31641 21.6504 6.41016C21.8145 6.50391 21.9434 6.63281 22.0371 6.79688C22.1309 6.96094 22.1777 7.14453 22.1777 7.34766C22.1777 7.63672 22.0723 7.88672 21.8613 8.09766L12.791 17.3906C12.6895 17.5 12.5684 17.5859 12.4277 17.6484C12.2949 17.7031 12.1543 17.7305 12.0059 17.7305Z"/>
+          </svg>
+        </button>
+        <button class="btn hub-listing-header-area__formats-btn">
+          Formats
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.0059 17.7305C11.709 17.7305 11.4434 17.6172 11.209 17.3906L2.13867 8.10938C2.03711 8.00781 1.95898 7.89453 1.9043 7.76953C1.84961 7.63672 1.82227 7.49609 1.82227 7.34766C1.82227 7.14453 1.86914 6.96094 1.96289 6.79688C2.05664 6.63281 2.18164 6.50391 2.33789 6.41016C2.50195 6.31641 2.68555 6.26953 2.88867 6.26953C3.18555 6.26953 3.43945 6.37109 3.65039 6.57422L12.627 15.75H11.373L20.3496 6.57422C20.5684 6.37109 20.8223 6.26953 21.1113 6.26953C21.3145 6.26953 21.4941 6.31641 21.6504 6.41016C21.8145 6.50391 21.9434 6.63281 22.0371 6.79688C22.1309 6.96094 22.1777 7.14453 22.1777 7.34766C22.1777 7.63672 22.0723 7.88672 21.8613 8.09766L12.791 17.3906C12.6895 17.5 12.5684 17.5859 12.4277 17.6484C12.2949 17.7031 12.1543 17.7305 12.0059 17.7305Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    {# END --- The top area of the module includes an H2 heading and buttons to activate filters. #}
+    
+    {# START --- Area with filters by Tags #}
+    <div class="flex-it-all align-center justify-center flex-wrap hub-listing-topics hide">
+      {% for topic in topics %}
+      <button class="btn hub-listing-topics__tag-button" data-value="{{ topic.value }}">{{ topic.label }}</button>
+      {% endfor %}
+    </div>
+    <div class="flex-it-all align-center justify-center flex-wrap hub-listing-formats hide">
+      {% for format in formats %}
+      <button class="btn hub-listing-formats__tag-button" data-value="{{ format.value }}">{{ format.label }}</button>
+      {% endfor %}
+    </div>
+    {# END --- Area with filters by Tags #}
+    
+    {# START --- The div below is where the JavaScript code will append children based on the JSON object. #}
+    <div class="flex-it flex-row flex-wrap justify-center hub-listing-content-cards"></div>
+    {# END --- The div below is where the JavaScript code will append children based on the JSON object. #}
+    
+  </div>
+</div>
+
+{# START --- The "require_js" script tag is used to assign a JSON object, converted from a GraphQL query, to a JavaScript variable. #}
+{# Note: This approach is necessary because HUBL cannot operate within the module.js file / field. HUBL can only be used in a script tag within module.html. #}
+{% require_js %}
+<script type="text/javascript">
+  const queryCollectionDataSet = {{ module.data_query.data.HUBDB.the_hub_v2_collection|tojson }};
+</script>
+{% end_require_js %}
+{# END --- The "require_js" script tag is used to assign a JSON object, converted from a GraphQL query, to a JavaScript variable. #}

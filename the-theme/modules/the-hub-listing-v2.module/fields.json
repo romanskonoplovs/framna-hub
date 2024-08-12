@@ -1,0 +1,13 @@
+[ {
+  "id" : "e9fda0cc-c60c-2b91-96d4-3ed52e0b3ad7",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Hub"
+} ]

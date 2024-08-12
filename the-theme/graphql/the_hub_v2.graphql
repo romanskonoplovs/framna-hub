@@ -1,0 +1,15 @@
+query TheHubv2 {
+  HUBDB {
+    the_hub_v2_collection {
+      items {
+        description
+        feature_image
+        formats
+        label
+        title
+        topic
+        url
+      }
+    }
+  }
+}
